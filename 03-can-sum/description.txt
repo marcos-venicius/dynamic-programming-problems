@@ -1,0 +1,15 @@
+Write a function "canSum(targetSum, numbers)" that takes in a
+targetSum and an array of number as arguments.
+The function should return a boolean indicating whether or not it
+is possible to generate the targetSum using members from the array.
+
+- You may use an element of the array as many time as needed
+- You assume that all input numbers are nonnegative.
+
+Escreva uma função "canSum(targetSum, numbers)" que recebe um
+targetSum e uma matriz de números como argumentos.
+A função deve retornar um booleano indicando se é ou não
+é possível gerar o targetSum usando membros do array.
+
+- Você pode usar um elemento do array quantas vezes for necessário
+- Você assume que todos os números de entrada são não negativos.
