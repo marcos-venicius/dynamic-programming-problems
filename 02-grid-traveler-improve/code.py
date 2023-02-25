@@ -49,7 +49,9 @@ def traveler2(rows, cols, memo = {}):
 tests = [
     ((1, 1), 1),
     ((2, 3), 3),
+    ((3, 2), 3),
     ((3, 3), 6),
+    ((3, 7), 28),
     ((18, 18), 2333606220) # it takes a long time
 ]
 
@@ -63,19 +65,31 @@ def duration(fn):
         print(f'duration: {d:.5f}s')
 
 def test1():
-    print('using recursion')
+    print('TEST 1')
 
     for test in tests:
         g = test[0]
+
+        print(f'test: {g[0]}x{g[1]} = {test[1]}, res = ', end='')
+
         r = traveler(g[0], g[1])
+
+        print(r)
+
         assert r == test[1], f"result should be {test[1]} (!= {r})"
 
 def test2():
-    print('using recursion')
+    print('\nTEST 2')
 
     for test in tests:
         g = test[0]
+
+        print(f'test: {g[0]}x{g[1]} = {test[1]}, res = ', end='')
+
         r = traveler2(g[0], g[1])
+
+        print(r)
+
         assert r == test[1], f"result should be {test[1]} (!= {r})"
 
 duration(test1)
