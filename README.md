@@ -9,3 +9,7 @@ Solve problems in dynamic programming way
 - Grid 2D traveler
   - [first try](./02-grid-traveler/description.txt)
   - [improved way](./02-grid-traveler-improve/description.txt)
+
+- Can sum
+  - [first try](./03-can-sum/description.txt)
+  - _improved way_
