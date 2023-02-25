@@ -1,0 +1,5 @@
+Write a function "fib(n)" that takes in a number as an argument.
+The function should return the n-th number of the Fibonacci sequence.
+
+Escreva uma função "fib(n)" que recebe um número como argumento.
+A função deve retornar o nº número da sequência de fibonacci.
