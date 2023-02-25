@@ -12,4 +12,4 @@ Solve problems in dynamic programming way
 
 - Can sum
   - [first try](./03-can-sum/description.txt)
-  - _improved way_
+  - [improved way](./03-can-sum-improve/description.txt)
