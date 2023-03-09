@@ -1,5 +1,25 @@
 # dynamic-programming-problems
 
+## How to add new problems?
+
+don't worry about that! i'd created a script in python that solve this problem.
+
+to create a new problem:
+
+```bash
+python create.py problem-name-without-spaces
+```
+
+> please, follow the name convension using the "-" to separate the words
+
+to improve the current problem:
+
+```bash
+python create.py improve
+```
+
+really, just it.
+
 Solve problems in dynamic programming way
 
 - Fibonnaci
