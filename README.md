@@ -33,3 +33,7 @@ Solve problems in dynamic programming way
 - Can sum
   - [first try](./03-can-sum/description.txt)
   - [improved way](./03-can-sum-improve/description.txt)
+
+- How sum
+  - [first try](./04-how-sum/description.txt)
+  - [improved way](./04-how-sum-improve/description.txt)
