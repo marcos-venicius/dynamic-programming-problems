@@ -35,6 +35,19 @@ class CreateNewWorkDir(object):
     def load_files(self):
         for d in os.listdir('.'):
             self.files[d] = 1
+
+    def copy_file_content(self, file):
+        lines = []
+
+        with open(file, 'rb') as f:
+            lines = f.readlines()
+
+        text = ""
+
+        for line in lines:
+            text += line.decode("utf-8")
+
+        return bytes(text, 'utf-8')
     
     def get_last_dir_number(self, pad=2):
         m = 0
@@ -90,22 +103,42 @@ class CreateNewWorkDir(object):
         code_file = f'{self.name}/{self.code_file_name}'
         desc_file = f'{self.name}/{self.desc_file_name}'
 
-        # open(code_file, 'w').close()
-        # open(desc_file, 'w').close()
+        if self.improved_version:
+            cname = self.name.replace("-improve", "")
 
-        with open(code_file, 'wb') as f:
-            f.write(b'#!/usr/bin/env python3')
-            f.write(b'\n')
-            f.close()
+            code_file = f'{self.name}/{self.code_file_name}'
+            desc_file = f'{self.name}/{self.desc_file_name}'
 
-        with open(desc_file, 'wb') as f:
-            f.write(b'Your challenge description')
-            f.write(b'\n')
-            f.close()
+            prev_code_file = f'{cname}/{self.code_file_name}'
+            prev_desc_file = f'{cname}/{self.desc_file_name}'
+
+            code_content = self.copy_file_content(prev_code_file)
+            desc_content = self.copy_file_content(prev_desc_file)
+
+            with open(code_file, 'wb') as f:
+                f.write(code_content)
+                f.close()
+
+            with open(desc_file, 'wb') as f:
+                f.write(desc_content)
+                f.close()
+        else:
+            with open(code_file, 'wb') as f:
+                f.write(b'#!/usr/bin/env python3')
+                f.write(b'\n')
+                f.close()
+
+            with open(desc_file, 'wb') as f:
+                f.write(b'Your challenge description')
+                f.write(b'\n')
+                f.close()
+
+        if self.improved_version:
+            print(f"created an improvement version of \"{cname}\" challenge")
+        else:
+            print(f"challenge \"{self.name}\" created successfully")
 
 
 createNewWorkDir = CreateNewWorkDir()
 
 createNewWorkDir.create_workdir()
-
-print(f"challenge: {createNewWorkDir.name} created successfully")
